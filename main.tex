@@ -1,0 +1,84 @@
+\documentclass[letterpaper,12pt,twoside,notitlepage]{book}
+\title{Design Engineering and Science}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Datos para portada y contraportada
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tesistitulo}{Sistema de estacionamiento vertical rotatorio automatizado para el hotel \textit{Black Tower} Bogotá.}
+\newcommand{\tesisautora}{Kelly Paola Rivas Quintero}
+\newcommand{\tesisautorb}{Herney Quesada Saltarín}
+\newcommand{\tesisautorc}{Luis Fernando Prieto Jiménez}
+\newcommand{\tesiscurso}{Trabajo de grado para optar por el título de Especialistas de Gerencia de Proyectos.}
+\newcommand{\tesisfecha}{Abril de 2019}
+\newcommand{\tesisano}{2019}
+\newcommand{\tesisdirector}{Ing. Édgar Velasco Rojas}
+\newcommand{\tesispie}{\MakeUppercase{Universidad Piloto de Colombia}\\ 
+\MakeUppercase{Facultad de ciencias sociales y empresariales} \\
+\MakeUppercase{Especialización en gerencia de proyectos} \\ 
+\MakeUppercase{Bogotá D.C. - }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{Abril 2019}
+
+\usepackage[lmargin=4cm,rmargin=2.5cm,top=2.5cm,bottom=2.5cm]{geometry} %margenes
+\usepackage[spanish]{babel} %traduccion a espanol
+\usepackage[utf8]{inputenc} %acentos y tildes
+\usepackage{mathptmx} %times new roman
+\usepackage{fancyhdr} %headers and footers
+\fancyhead[R]{\thepage}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Lista de graficas y lista de anexos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% lista de anexos usar \listofanexos
+
+%% \begin{anexos}
+%% \caption{Anexo, titulo del anexo}
+%% \end{anexos}
+
+\usepackage{float}
+\newfloat{anexos}{htpb}{plt}[chapter]
+\floatname{anexos}{Anexos}
+\newcommand{\listofanexosname}{Lista de Anexos}
+\newcommand{\listofanexos}{
+  \addcontentsline{toc}{chapter}{\listofanexosname}
+  \listof{anexos}{\listofanexosname}
+}
+
+%% lista de anexos usar \listofanexos
+
+%% \begin{graficas}
+%% \caption{Grafica, titulo de grafica}
+%% \end{graficas}
+\newfloat{graficas}{htpb}{plt}[chapter]
+\floatname{graficas}{Graficas}
+\newcommand{\listofgraficasname}{Índice de gráficas}
+\newcommand{\listofgraficas}{
+  \addcontentsline{toc}{chapter}{\listofgraficasname}
+  \listof{graficas}{\listofgraficasname}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\renewcommand{\thepage}{\roman{page}} %numeracion romana
+\include{src/portada}
+\include{src/aceptacion}
+\include{src/agradecimientos}
+\renewcommand\contentsname{TABLA DE CONTENIDO}
+\tableofcontents
+\renewcommand{\listfigurename}{Índice de figuras.}
+\listoffigures
+\renewcommand{\listtablename}{Índice de tablas.}
+\listoftables
+\listofgraficas
+\listofanexos
+\renewcommand{\thepage}{\arabic{page}} %numeracion Arabiga
+\include{src/abstract}
+\include{src/capitulo1}
+\include{src/capitulo2}
+\include{src/capitulo3}
+\include{src/bibliografia}
+
+\end{document}
